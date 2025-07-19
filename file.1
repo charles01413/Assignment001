@@ -1,0 +1,93 @@
+Part 1: Short Answer Questions (30 points)
+1. Problem Definition (6 points)
+AI Problem: Predicting student dropout rates in secondary schools.
+Objectives:
+•	Identify at-risk students early.
+•	Allocate targeted interventions.
+•	Improve overall graduation rates.
+Stakeholders:
+•	School administrators
+•	Students and parents
+KPI: Reduction in actual dropout rate over a school year.
+2. Data Collection & Preprocessing (8 points)
+Data Sources:
+•	Student attendance records
+•	Academic performance reports
+Potential Bias: Students from low-income backgrounds might be overrepresented in dropout cases, skewing the model.
+Preprocessing Steps:
+•	Impute missing attendance values
+•	Normalize grades to a common scale
+•	Encode categorical variables like gender and school location
+3. Model Development (8 points)
+Model: Random Forest
+Justification: Robust against overfitting, handles both numerical and categorical data well.
+Data Split:
+•	70% Training
+•	15% Validation
+•	15% Test
+Hyperparameters:
+•	Number of trees (affects complexity and accuracy)
+•	Max depth (controls overfitting)
+4. Evaluation & Deployment (8 points)
+Metrics:
+•	Precision (to reduce false positives in identifying dropouts)
+•	Recall (to ensure high detection of at-risk students)
+Concept Drift: Occurs when data patterns change over time (e.g., pandemic affecting attendance).
+Monitoring: Retrain model periodically and compare performance on new data.
+Deployment Challenge: Scalability across diverse school systems with different data formats.
+🏥 Part 2: Case Study Application (40 points)
+Problem Scope (5 points)
+Problem: Predicting 30-day patient readmission risk.
+Objectives:
+•	Reduce preventable readmissions
+•	Improve resource planning
+Stakeholders:
+•	Hospital administrators
+•	Medical staff
+Data Strategy (10 points)
+Sources:
+•	Electronic Health Records (EHRs)
+•	Patient demographics and lifestyle data
+Ethical Concerns:
+•	Patient privacy
+•	Data consent and usage transparency
+Preprocessing Pipeline:
+•	Handle missing values (e.g., medication history)
+•	Normalize lab test results
+•	Feature engineering: time since last admission, number of prior visits
+Model Development (10 points)
+Model: Logistic Regression
+Justification: Interpretability is critical in healthcare decisions.
+Confusion Matrix Example:
+	Predicted: Readmit	Predicted: No Readmit
+Actual: Readmit	80	20
+Actual: No Readmit	30	70
+•	Precision: 80 / (80 + 30) = 0.727
+•	Recall: 80 / (80 + 20) = 0.800
+Deployment (10 points)
+Integration Steps:
+•	API connection to hospital EHR system
+•	Staff training and dashboard design
+Regulatory Compliance:
+•	Encrypt data and follow HIPAA standards
+•	Perform regular audits and implement access controls
+Optimization (5 points)
+Method: Use regularization (L2) and cross-validation to prevent overfitting.
+🧩 Part 3: Critical Thinking (20 points)
+Ethics & Bias (10 points)
+Impact of Bias:
+Underrepresented populations may be misclassified, leading to unequal care.
+Mitigation Strategy:
+Use balanced datasets and fairness-aware algorithms.
+Trade-offs (10 points)
+Interpretability vs Accuracy:
+Neural networks offer higher accuracy but less interpretability, which may undermine trust in clinical settings.
+Limited Resources Impact:
+Choose simpler models (e.g., Decision Trees) and optimize for speed and efficiency.
+💬 Part 4: Reflection & Workflow Diagram (10 points)
+Reflection (5 points)
+Most Challenging: Ensuring ethical fairness in data and model decisions.
+Improvement: Collaborate with domain experts and expand data collection for better representativeness.
+Diagram (5 points)
+Here’s a textual sketch of the workflow:
+[Problem Definition] → [Data Collection] → [Preprocessing] → [Model Development] ↓ [Evaluation] ← [Validation/Test] → [Deployment] → [Monitoring & Optimization] 
